@@ -11,6 +11,7 @@ The characters are passing through the platform and the player must put some bri
 ## MVP (DOM - CANVAS)
 - The player move the bridges, only one at each time.
 - The characters “minioms” appear randomly and with different speed to the platform.
+- The characters “minioms” appear from outside of the screen between left and right sides randomly.
 - The holes of the platform are detected if there isnt any brigde from the player and fall.
 - If the character falls, the game is over.
 - If the characters continue and reach the other side of the platform. the game is complete.
