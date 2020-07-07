@@ -7,12 +7,12 @@ body {
 
 body button {
     font-size: 30px;
-    background-color: #870007;
-    color: #fff;
+    background-color: #45bcf8;
+    color: black;
     padding: 20px 40px;
     border: 0;
     box-shadow: 0;
-    border-radius: 5px;
+    border-radius: 20px;
     margin-bottom: 20px;
 }
 

@@ -27,7 +27,9 @@ class Player extends Characters {
     if (this.y + 10 <= element.y + element.height && this.y >= element.y) {
       //x axis
       if (this.x >= element.x && this.x <= element.x + element.width) {
-        element.y = 0; 
+
+        element.y += 1;
+        element.x += this.x;
       }
     }
   }

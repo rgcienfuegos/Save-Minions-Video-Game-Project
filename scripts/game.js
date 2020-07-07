@@ -9,6 +9,7 @@ class Game {
     this.y = 0;
     this.width = 500;
     this.height = 500;
+    this.backgroundMusic = new Audio();
   }
 
   init() {
@@ -17,6 +18,10 @@ class Game {
     this.start();
     this.createObstacles();
     this.createObstacles2();
+    setInterval(() => {
+      this.backgroundMusic.volume =0.2 
+      this.backgroundMusic.play();      
+    }, 1000);
   }
 
   start() {
