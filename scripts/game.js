@@ -2,14 +2,17 @@ class Game {
   constructor() {
     this.canvas = undefined;
     this.ctx = undefined;
-    this.car = new Player(this, 200, 550, 50, 50);
+    this.platform = new Player(this, 200, 550, 50, 50);
     this.obstacles = [];
     this.backgroundImg = new Image();
     this.x = 0;
     this.y = 0;
     this.width = 500;
     this.height = 500;
-    this.backgroundMusic = new Audio();
+    this.gravitySpeed = 5;
+    this.backgroundMusic = new Audio("sound/luis-fonsi-daddy-yankee-despacito-remix-ft-justin-bieber-minions-cover (1).mp3");
+    this.fallingSound = new Audio("sound/soundtrack-minions-gritando-2.mp3");
+    this.points = 0;
   }
 
   init() {
@@ -19,8 +22,8 @@ class Game {
     this.createObstacles();
     this.createObstacles2();
     setInterval(() => {
-      this.backgroundMusic.volume =0.2 
-      this.backgroundMusic.play();      
+      this.backgroundMusic.volume = 0.1;
+      this.backgroundMusic.play();
     }, 1000);
   }
 
@@ -35,12 +38,12 @@ class Game {
       this.drawBackgroundLines();
       this.drawBackground();
       this.drawMainCharacter();
-      this.car.move();
+      this.platform.move();
       for (let i = 0; i < this.obstacles.length; i++) {
         this.obstacles[i].move();
         this.obstacles[i].draw();
-        this.car.crashCollision(this.obstacles[i]);
-        if (this.obstacles[i].y > 800) {
+        this.platform.crashCollision(this.obstacles[i]);
+        if (this.obstacles[i].x > 490) {
           this.obstacles.splice(i, 1);
         }
       }
@@ -114,13 +117,18 @@ class Game {
   }
 
   drawMainCharacter() {
-    this.car.drawComponent("images/pngegg (2).png");
+    this.platform.drawComponent("images/platform.png");
   }
 
   clear() {
     this.ctx.clearRect(this.x, this.y, this.width, this.height);
   }
 
-
+  score() {
+    this.ctx.points += 1;
+    this.ctx.font = "20px serif";
+    this.ctx.fillStyle = "black";
+    this.ctx.fillText(`Score: ${points}`, 50, 50);
+  }
 
 }

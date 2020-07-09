@@ -7,6 +7,7 @@ class Characters {
     this.height = h;
     this.img = new Image();
   }
+  
   drawComponent(imgSource) {
     const gameCtx = this.game.ctx;
     this.img.src = imgSource;

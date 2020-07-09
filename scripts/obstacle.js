@@ -7,7 +7,7 @@ class Obstacle extends Characters {
     this.height = 50;
     this.img = new Image();
     this.speedX = 1;
-    this.speedY = 0;
+    this.speedY = 50;
   }
   draw() {
     this.img.src = "images/pngfuel.com.png";
@@ -16,12 +16,15 @@ class Obstacle extends Characters {
 
   move() {
     if (Math.floor(Math.random() * 50) % 3 === 0) {
-      this.x += this.speedX;
+      if (this.x >= 150 && this.x <= 180)
       this.y += this.speedY;
+    } else if (this.x >= 290 && this.x <= 310) {
+      this.y += this.speedY;
+    } else {
+      this.x += this.speedX;
     }
   }
 
-  
 }
 
 class Obstacle2 extends Characters {
@@ -32,8 +35,8 @@ class Obstacle2 extends Characters {
     this.width = 50;
     this.height = 50;
     this.img = new Image();
-    this.speedX = 2;
-    this.speedY = 0;
+    this.speedX = 1.5;
+    this.speedY = 50;
   }
   draw() {
     this.img.src = "images/pngfuel.com (1).png";
@@ -42,7 +45,11 @@ class Obstacle2 extends Characters {
 
   move() {
     if (Math.floor(Math.random() * 50) % 3 === 0) {
-      
+      if (this.x >= 150 && this.x <= 180)
+      this.y += this.speedY;
+    }  else if (this.x >= 290 && this.x <= 310) {
+      this.y += this.speedY;
+    } else {
       this.x += this.speedX;
     }
   }

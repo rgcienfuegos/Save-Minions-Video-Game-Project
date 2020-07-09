@@ -28,8 +28,8 @@ class Player extends Characters {
       //x axis
       if (this.x >= element.x && this.x <= element.x + element.width) {
 
-        element.y += 1;
-        element.x += this.x;
+        element.x = 50 + this.x;
+        element.score();
       }
     }
   }
