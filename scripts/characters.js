@@ -13,4 +13,5 @@ class Characters {
     this.img.src = imgSource;
     gameCtx.drawImage(this.img, this.x, this.y, this.width, this.height);
   }
+
 }

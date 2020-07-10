@@ -17,7 +17,7 @@ class Obstacle extends Characters {
   move() {
     if (Math.floor(Math.random() * 50) % 3 === 0) {
       if (this.x >= 150 && this.x <= 180)
-      this.y += this.speedY;
+        this.y += this.speedY;
     } else if (this.x >= 290 && this.x <= 310) {
       this.y += this.speedY;
     } else {
@@ -37,6 +37,7 @@ class Obstacle2 extends Characters {
     this.img = new Image();
     this.speedX = 1.5;
     this.speedY = 50;
+    this.fallingSound = new Audio("sound/soundtrack-minions-gritando-2.mp3");
   }
   draw() {
     this.img.src = "images/pngfuel.com (1).png";
@@ -46,8 +47,8 @@ class Obstacle2 extends Characters {
   move() {
     if (Math.floor(Math.random() * 50) % 3 === 0) {
       if (this.x >= 150 && this.x <= 180)
-      this.y += this.speedY;
-    }  else if (this.x >= 290 && this.x <= 310) {
+        this.y += this.speedY;
+    } else if (this.x >= 290 && this.x <= 310) {
       this.y += this.speedY;
     } else {
       this.x += this.speedX;

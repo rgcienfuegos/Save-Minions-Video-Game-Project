@@ -1,6 +1,7 @@
 class Player extends Characters {
   constructor(game, x, y, w, h) {
     super(game, x, y, w, h);
+    this.score = 0;
   }
   move() {
     document.onkeydown = (event) => {
@@ -29,7 +30,6 @@ class Player extends Characters {
       if (this.x >= element.x && this.x <= element.x + element.width) {
 
         element.x = 50 + this.x;
-        element.score();
       }
     }
   }

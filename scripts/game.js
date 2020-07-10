@@ -11,8 +11,8 @@ class Game {
     this.height = 500;
     this.gravitySpeed = 5;
     this.backgroundMusic = new Audio("sound/luis-fonsi-daddy-yankee-despacito-remix-ft-justin-bieber-minions-cover (1).mp3");
-    this.fallingSound = new Audio("sound/soundtrack-minions-gritando-2.mp3");
-    this.points = 0;
+    this.sound = new Audio("sound/soundtrack-minions-guna.mp3");
+    this.score = 0;
   }
 
   init() {
@@ -38,6 +38,7 @@ class Game {
       this.drawBackgroundLines();
       this.drawBackground();
       this.drawMainCharacter();
+      this.drawScore();
       this.platform.move();
       for (let i = 0; i < this.obstacles.length; i++) {
         this.obstacles[i].move();
@@ -45,6 +46,9 @@ class Game {
         this.platform.crashCollision(this.obstacles[i]);
         if (this.obstacles[i].x > 490) {
           this.obstacles.splice(i, 1);
+          this.score ++;
+          this.sound.volume = 0.2;
+          this.sound.play();
         }
       }
     }, 1000 / 120);
@@ -124,11 +128,11 @@ class Game {
     this.ctx.clearRect(this.x, this.y, this.width, this.height);
   }
 
-  score() {
-    this.ctx.points += 1;
-    this.ctx.font = "20px serif";
-    this.ctx.fillStyle = "black";
-    this.ctx.fillText(`Score: ${points}`, 50, 50);
-  }
+
+  drawScore() {
+    this.ctx.font = "26px Roboto";
+    this.ctx.fillStyle = "#black";
+    this.ctx.fillText(`Score: ${this.score}`, 380, 50)
+}
 
 }
