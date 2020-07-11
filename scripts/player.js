@@ -6,7 +6,7 @@ class Player extends Characters {
   move() {
     document.onkeydown = (event) => {
       const key = event.keyCode;
-      const possibleKeysStrokes = [90, 77, 81, 80];
+      const possibleKeysStrokes = [90, 77, 65, 75];
       if (possibleKeysStrokes.includes(key)) {
         switch (key) {
           case 90:
@@ -17,11 +17,11 @@ class Player extends Characters {
             this.x = 300;
             this.y = 342;
             break;
-          case 81:
+          case 65:
             this.x = 150;
             this.y = 172;
             break;
-          case 80:
+          case 75:
             this.x = 300;
             this.y = 172;
             break;

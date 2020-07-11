@@ -35,7 +35,7 @@ class Obstacle3 extends Characters {
       this.width = 60;
       this.height = 50;
       this.img = new Image();
-      this.speedX = 1.75;
+      this.speedX = 1.7;
       this.speedY = 50;
       this.fallingSound = new Audio("sound/soundtrack-minions-gritando-2.mp3");
     }

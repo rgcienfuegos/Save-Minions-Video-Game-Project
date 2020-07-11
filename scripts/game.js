@@ -198,6 +198,7 @@ class Game {
       );
       this.ctx.clear();
       this.ctx.stop();
+      this.ctx.clearInterval(canvas);
       this.backgroundMusic.pause();
     }
   }
