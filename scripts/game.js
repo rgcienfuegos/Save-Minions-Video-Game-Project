@@ -191,10 +191,10 @@ class Game {
       this.gameOverImg.src = "images/gameover.png";
       this.ctx.drawImage(
         this.gameOverImg,
-        this.x,
-        this.y,
-        this.width,
-        this.height
+        200,
+        200,
+        300,
+        300
       );
       this.ctx.clear();
       this.ctx.stop();
