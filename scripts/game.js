@@ -5,6 +5,8 @@ class Game {
     this.platform = new Player(this, 200, 550, 50, 50);
     this.obstacles = [];
     this.backgroundImg = new Image();
+    this.gameOverImg = new Image();
+    this.lifeImage = new Image();
     this.x = 0;
     this.y = 0;
     this.width = 500;
@@ -12,7 +14,9 @@ class Game {
     this.gravitySpeed = 5;
     this.backgroundMusic = new Audio("sound/luis-fonsi-daddy-yankee-despacito-remix-ft-justin-bieber-minions-cover (1).mp3");
     this.sound = new Audio("sound/soundtrack-minions-guna.mp3");
+    this.sound2 = new Audio("sound/SPLASH Sound Effect Free Download.mp3");
     this.score = 0;
+    this.lifes = 3;
   }
 
   init() {
@@ -21,6 +25,8 @@ class Game {
     this.start();
     this.createObstacles();
     this.createObstacles2();
+    this.createObstacles3();
+    this.createObstacles4();
     setInterval(() => {
       this.backgroundMusic.volume = 0.1;
       this.backgroundMusic.play();
@@ -39,6 +45,9 @@ class Game {
       this.drawBackground();
       this.drawMainCharacter();
       this.drawScore();
+      this.drawLifes();
+      this.checkLifes();
+      this.gameOver();
       this.platform.move();
       for (let i = 0; i < this.obstacles.length; i++) {
         this.obstacles[i].move();
@@ -46,7 +55,7 @@ class Game {
         this.platform.crashCollision(this.obstacles[i]);
         if (this.obstacles[i].x > 490) {
           this.obstacles.splice(i, 1);
-          this.score ++;
+          this.score++;
           this.sound.volume = 0.2;
           this.sound.play();
         }
@@ -74,6 +83,26 @@ class Game {
     }, 5000);
   }
 
+  createObstacles3() {
+    if (Math.floor(Math.random() * 10) % 2 === 0) {
+      this.obstacles.push(new Obstacle3(this));
+    }
+
+    setTimeout(() => {
+      this.createObstacles3();
+    }, 5000);
+  }
+
+  createObstacles4() {
+    if (Math.floor(Math.random() * 10) % 2 === 0) {
+      this.obstacles.push(new Obstacle4(this));
+    }
+
+    setTimeout(() => {
+      this.createObstacles4();
+    }, 5000);
+  }
+
   drawBackground() {
     this.backgroundImg.src = "images/fondostory.jpg";
     this.ctx.drawImage(
@@ -85,20 +114,34 @@ class Game {
     );
 
     this.ctx.beginPath();
-    this.ctx.moveTo(10, 250);
-    this.ctx.lineTo(150, 250);
+    this.ctx.moveTo(10, 200);
+    this.ctx.lineTo(150, 200);
     this.ctx.lineWidth = 5;
     this.ctx.strokeStyle = 'black';
-    this.ctx.moveTo(200, 250);
-    this.ctx.lineTo(300, 250);
+    this.ctx.moveTo(200, 200);
+    this.ctx.lineTo(300, 200);
     this.ctx.lineWidth = 5;
     this.ctx.strokeStyle = 'black';
-    this.ctx.moveTo(350, 250);
-    this.ctx.lineTo(490, 250);
+    this.ctx.moveTo(350, 200);
+    this.ctx.lineTo(490, 200);
     this.ctx.lineWidth = 5;
     this.ctx.strokeStyle = 'black';
     this.ctx.stroke();
 
+    this.ctx.beginPath();
+    this.ctx.moveTo(10, 370);
+    this.ctx.lineTo(150, 370);
+    this.ctx.lineWidth = 5;
+    this.ctx.strokeStyle = 'black';
+    this.ctx.moveTo(200, 370);
+    this.ctx.lineTo(300, 370);
+    this.ctx.lineWidth = 5;
+    this.ctx.strokeStyle = 'black';
+    this.ctx.moveTo(350, 370);
+    this.ctx.lineTo(490, 370);
+    this.ctx.lineWidth = 5;
+    this.ctx.strokeStyle = 'black';
+    this.ctx.stroke();
   }
 
   drawBackgroundLines() {
@@ -133,6 +176,41 @@ class Game {
     this.ctx.font = "26px Roboto";
     this.ctx.fillStyle = "#black";
     this.ctx.fillText(`Score: ${this.score}`, 380, 50)
-}
+  }
+
+  drawLifes() {
+    this.ctx.font = "26px Roboto";
+    this.ctx.fillStyle = "#black";
+    this.lifeImage.src = "images/life.png"
+    let heart = this.ctx.drawImage(this.lifeImage, 10, 25, 30, 30)
+    this.ctx.fillText(`: ${this.lifes}`, 50, 50)
+  }
+
+  gameOver() {
+    if (this.lifes <= 0) {
+      this.gameOverImg.src = "images/gameover.png";
+      this.ctx.drawImage(
+        this.gameOverImg,
+        this.x,
+        this.y,
+        this.width,
+        this.height
+      );
+      this.ctx.clear();
+      this.ctx.stop();
+      this.backgroundMusic.pause();
+    }
+  }
+
+  checkLifes() {
+    for (let i = 0; i < this.obstacles.length; i++) {
+      if (this.obstacles[i].y > 490) {
+        this.obstacles.splice(i, 1);
+        this.lifes--;
+        this.sound2.volume = 0.2;
+        this.sound2.play();
+      }
+    }
+  }
 
 }
