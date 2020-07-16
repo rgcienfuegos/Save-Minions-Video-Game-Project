@@ -2,7 +2,7 @@ body {
     padding: 0;
     text-align: center;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
 }
 
 body button {
@@ -17,13 +17,13 @@ body button {
 }
 
 #game-board {
-    float: left;
-    padding: 20px 0px;
+    border-radius: 20px;
 }
 
 .game-intro {
-    float: left;
-    padding: 0% 10%;
+    height: 80vh;
+    align-items: center;
+
 }
 
 .game-intro p {
@@ -37,4 +37,21 @@ body button {
 
 .arrows-img {
     width: 150px;
+}
+
+#gameOver-screen {
+    height: 80vh;
+    margin: 2% 15%;
+    align-items: center;
+}
+
+#tryAgain-button {
+    font-size: 30px;
+    background-color: #45bcf8;
+    color: black;
+    padding: 20px 40px;
+    border: 0;
+    box-shadow: 0;
+    border-radius: 20px;
+    margin-bottom: 20px;
 }

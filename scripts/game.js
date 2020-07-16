@@ -15,6 +15,7 @@ class Game {
     this.backgroundMusic = new Audio("sound/luis-fonsi-daddy-yankee-despacito-remix-ft-justin-bieber-minions-cover (1).mp3");
     this.sound = new Audio("sound/soundtrack-minions-guna.mp3");
     this.sound2 = new Audio("sound/SPLASH Sound Effect Free Download.mp3");
+    this.gameOverMusic = new Audio("sound/Despicable Me 2Minions Banana Song (2013) SNSD TTS.mp3");
     this.score = 0;
     this.lifes = 3;
   }
@@ -27,10 +28,10 @@ class Game {
     this.createObstacles2();
     this.createObstacles3();
     this.createObstacles4();
-    setInterval(() => {
-      this.backgroundMusic.volume = 0.1;
-      this.backgroundMusic.play();
-    }, 1000);
+
+    this.backgroundMusic.volume = 0.1;
+    this.backgroundMusic.play();
+
   }
 
   start() {
@@ -39,7 +40,9 @@ class Game {
     this.drawBackground();
     this.drawMainCharacter();
 
-    setInterval(() => {
+
+
+    let setInterval1 = setInterval(() => {
       this.clear();
       this.drawBackgroundLines();
       this.drawBackground();
@@ -47,7 +50,6 @@ class Game {
       this.drawScore();
       this.drawLifes();
       this.checkLifes();
-      this.gameOver();
       this.platform.move();
       for (let i = 0; i < this.obstacles.length; i++) {
         this.obstacles[i].move();
@@ -59,6 +61,10 @@ class Game {
           this.sound.volume = 0.2;
           this.sound.play();
         }
+      }
+      if (this.lifes <= 0) {
+        this.gameOver();
+        clearInterval(setInterval1);
       }
     }, 1000 / 120);
   }
@@ -188,18 +194,22 @@ class Game {
 
   gameOver() {
     if (this.lifes <= 0) {
-      this.gameOverImg.src = "images/gameover.png";
-      this.ctx.drawImage(
-        this.gameOverImg,
-        200,
-        200,
-        300,
-        300
-      );
-      this.ctx.clear();
-      this.ctx.stop();
-      this.ctx.clearInterval(canvas);
+      // this.gameOverImg.src = "images/gameover.png";
+      // this.ctx.drawImage(
+      //   this.gameOverImg,
+      //   200,
+      //   200,
+      //   300,
+      //   300
+      // );
+      // this.ctx.clear();
+      // this.ctx.stop();
+      // this.ctx.clearInterval(canvas);
+      // this.backgroundMusic.pause();
+      this.gameOverMusic.volume = 0.2;
+      this.gameOverMusic.play();
       this.backgroundMusic.pause();
+      callGameOver();
     }
   }
 

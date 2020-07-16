@@ -1,7 +1,7 @@
 class Obstacle extends Characters {
   constructor(game) {
     super(game);
-    this.x = 10;
+    this.x = 0;
     this.y = 150;
     this.width = 50;
     this.height = 50;
@@ -30,7 +30,7 @@ class Obstacle extends Characters {
 class Obstacle2 extends Characters {
   constructor(game) {
     super(game);
-    this.x = 10
+    this.x = 0;
     this.y = 150;
     this.width = 50;
     this.height = 50;
@@ -55,5 +55,5 @@ class Obstacle2 extends Characters {
     }
   }
 
-  
+
 }
