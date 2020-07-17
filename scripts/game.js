@@ -179,13 +179,13 @@ class Game {
 
 
   drawScore() {
-    this.ctx.font = "26px Roboto";
+    this.ctx.font = "35px Indie Flower";
     this.ctx.fillStyle = "#black";
-    this.ctx.fillText(`Score: ${this.score}`, 380, 50)
+    this.ctx.fillText(`Score: ${this.score}`, 360, 50)
   }
 
   drawLifes() {
-    this.ctx.font = "26px Roboto";
+    this.ctx.font = "35px Indie Flower";
     this.ctx.fillStyle = "#black";
     this.lifeImage.src = "images/life.png"
     let heart = this.ctx.drawImage(this.lifeImage, 10, 25, 30, 30)
