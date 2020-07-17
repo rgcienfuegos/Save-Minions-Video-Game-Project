@@ -57,7 +57,7 @@ class Game {
         this.platform.crashCollision(this.obstacles[i]);
         if (this.obstacles[i].x > 490) {
           this.obstacles.splice(i, 1);
-          this.score++;
+          this.score ++;
           this.sound.volume = 0.2;
           this.sound.play();
         }
@@ -223,5 +223,7 @@ class Game {
       }
     }
   }
+
+
 
 }

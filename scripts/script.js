@@ -1,4 +1,4 @@
-function buildScreen (htmlString) {
+function buildScreen(htmlString) {
   let div = document.createElement("div");
   div.innerHTML = htmlString;
   return div.children[0]
@@ -6,14 +6,14 @@ function buildScreen (htmlString) {
 
 let mainContainer = document.getElementById("game-main")
 
-function main () {
+function main() {
   let splashScreen
   let gameScreen
   let gameOverScreen
-  
+
 
   function createSplashScreen() {
-      splashScreen = buildScreen(`
+    splashScreen = buildScreen(`
       <div class="game-intro">
     <img src="./images/miniom.png" alt="" class="moniom-img" />
     <br />
@@ -27,73 +27,76 @@ function main () {
     <br />
     <button id="start-button">StartGame</button>
       `)
-      mainContainer.appendChild(splashScreen)
-      let startButton = document.getElementById("start-button")
-      startButton.addEventListener('click', function() {
-          startGame();
-      });
+    mainContainer.appendChild(splashScreen)
+    let startButton = document.getElementById("start-button")
+    startButton.addEventListener('click', function () {
+      startGame();
+    });
   }
+
   function removeSplashScreen() {
-      splashScreen.remove();
+    splashScreen.remove();
   }
- 
+
   function createGameScreen() {
-      gameScreen = buildScreen(`<div id="game-board">
+    gameScreen = buildScreen(`<div id="game-board">
       <canvas id="canvas" width="500" height="500"></canvas>
     </div>`)
 
-      mainContainer.appendChild(gameScreen)
-      return gameScreen
+    mainContainer.appendChild(gameScreen)
+    return gameScreen
   }
- 
+
   function removeGameScreen() {
-      gameScreen.remove();
+    gameScreen.remove();
   }
- 
+
   function createGameOverScreen() {
-      gameOverScreen = buildScreen(`<div id="gameOver-screen">
-         <h2>You couldn´t save the minions...</h2> <br />
-         <button id="tryAgain-button">Try again</button><br />
+    gameOverScreen = buildScreen(`<div id="gameOver-screen">
+         <h1> YOU GOT ${game.score} POINTS!</h1>
+         <h2>Don´t you wanna save more, Banana ??</h2> <br />
+         <button id="tryAgain-button">Try Again</button><br />
          <img src="./images/gameOver2.png"><br />
  </div>`)
 
-      mainContainer.appendChild(gameOverScreen)
-      
-      let tryAgaintBtn = document.getElementById("tryAgain-button");
-      
-      tryAgaintBtn.addEventListener('click', function() {
-        gameOverScreen.remove();
-        startGame()
-        this.gameOverMusic.pause();
-     });
+    mainContainer.appendChild(gameOverScreen)
+
+    let tryAgaintBtn = document.getElementById("tryAgain-button");
+
+    tryAgaintBtn.addEventListener('click', function () {
+      gameOverScreen.remove();
+      startGame()
+      game.gameOverMusic.pause();
+    });
 
   }
+
   function removeGameOverScreen() {
-      if (gameOverScreen !== undefined) {
-         gameOverScreen.remove();
-      }
+    if (gameOverScreen !== undefined) {
+      gameOverScreen.remove();
+    }
   }
 
   function startGame() {
-      removeSplashScreen();
-      removeGameOverScreen();
-      game = new Game();
-      game.gameScreen = createGameScreen();
-      game.init();
+    removeSplashScreen();
+    removeGameOverScreen();
+    game = new Game();
+    game.gameScreen = createGameScreen();
+    game.init();
 
 
   }
 
-  callGameOver = () =>{
-     removeGameScreen();
-     return createGameOverScreen();
- 
-   }
- 
- createSplashScreen()
+  callGameOver = () => {
+    removeGameScreen();
+    return createGameOverScreen();
+
+  }
+
+  createSplashScreen()
 
 }
 
 window.onload = function () {
- main()
+  main()
 }
