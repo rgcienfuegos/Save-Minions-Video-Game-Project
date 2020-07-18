@@ -5,21 +5,21 @@ LAB - videoGame
 Save Minioms - Platform game.
 
 ## Description
-The game is base on the arcade game of the 80`s called GAME AND WATCH from NINTENDO, and particularly from MANHOLE NH103.
-The characters are passing through the platform and the player must put some bridges to make them able reach the other side of the screen.
+The game is based on the arcade game of the 80`s called GAME AND WATCH from NINTENDO, and particularly from MANHOLE NH103.
+The characters are passing through the platforms and the player move some bridges to prevent them falling and cross to the other side.
 
 ## MVP (DOM - CANVAS)
 - The player move the bridges, only one at each time.
-- The characters “minioms” appear randomly and with different speed to the platform.
-- The characters “minioms” appear from outside of the screen between left and right sides randomly.
-- The holes of the platform are detected if there isnt any brigde from the player and fall.
-- If the character falls, the game is over.
+- The characters “minioms” appear randomly, with different speed to the platforms.
+- The characters “minioms” appear from outside of the screen from left and must reach the right part.
+- The holes of the platform are detected if there isnt any brigde from the player movement the characters fall.
+- If the character falls, you have 1 of 3 lifes out, if you are run out of lifes, the game is over.
 - If the characters continue and reach the other side of the platform. the game is complete.
 
 ## Backlog
-- Score - If the user reaches 10 characters without falling, wins
-- Level of difficulty - characters appear faster in the last scores.
-- Player changes bridges with keypad (Q,P,Z,M)
+- Score - If the character are able to cross the platform, the player has 1 score up.
+- Level of difficulty - characters appear faster with higher score.
+- Player changes bridges with keypad (Q,A,M,K)
 - Sound effects for scoring, victory and game-over scenarios.
 - Levels - with less time and more speed of the obstacles.
 
@@ -28,7 +28,7 @@ The characters are passing through the platform and the player must put some bri
 ### style.css
 ### game.js
 ```
-    game () {
+game () {
         constructor() {
             this.canvas;
             this.ctx;
@@ -41,23 +41,37 @@ this.platform;
     }
     init()
     start()
+    createObstacles()
+    createObstacles2()
+    createObstacles3()
+    createObstacles4()
     drawBackground()
-    drawBPlatform()
-    drawMinion1()
-    drawMinion2()
-    clearCanva()
+    drawBackgroundLines()
+    drawMainCharacter()
+    clear()
+    drawScore()
+    drawLifes()
     gameOver()
+    checkLifes()
 ```
 
 ### script.js
 ```
+buildScreen()
+main()
+createSplashScreen()
+removeSplashScreen()
+createGameScreen()
+removeGameScreen()
+createGameOverScreen()
+removeGameOverScreen() 
 startGame()
-finishGame()
+
 ```
 
 ### characters.js
 ```
-    element() {
+    class Characters {
         constructor() {
             this.game;
             this.x;
@@ -67,28 +81,46 @@ finishGame()
             this.img;
         }
     }
-    drawElement()
+    drawComponent()
+
 ```
 
-### playerBriges.js
+### player.js
 ```
-    player Extends element () {
+    class Player extends Characters () {
         constructor ()
     }
     move()
     collision()
 ```
 
-### miniom.js
+### obstacle.js
 ```
-    miniom1 Extends element () {
+    class Obstacle extends Characters () {
+        constructor()
+    }
+    draw()
+    move()
+    collision()
+
+   class Obstacle2 extends Characters() {
         constructor()
     }
     draw()
     move()
     collision()
 ```
-    miniom2 Extends element () {
+
+### obstacleBonus.js
+```
+class Obstacle3 extends Characters () {
+        constructor()
+    }
+    draw()
+    move()
+    collision()
+
+   class Obstacle4 extends Characters() {
         constructor()
     }
     draw()
@@ -137,24 +169,23 @@ finishGame()
 - minion2 - continue collision
 
 
-
-
-
-
 ## Links
 
+DEMO > https://alejanglez.github.io/Save-Minions-Video-Game-Project/
 
 ### Trello
+
+https://trello.com/b/cTKIEKYl/save-minions-video-game-projec
 
 
 
 ### Git
 URls for the project repo and deploy
-[Link Repo](http://github.com)
-[Link Deploy](http://github.com)
+
+https://github.com/alejanglez/Save-Minions-Video-Game-Project
 
 
 ### Slides - Wire frames
 
-https://www.figma.com/file/BVQY2UWYD5NkIKWH08B87i/Save-Minioms---Wire-Frames
+https://docs.google.com/presentation/d/1Nghxij8S6AlmM9_iw1OCH4nyRq5YyuOHDYjBbivODF0/edit#slide=id.p
 
