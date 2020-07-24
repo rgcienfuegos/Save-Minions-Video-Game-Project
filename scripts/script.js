@@ -56,7 +56,8 @@ function main() {
          <h1 id="score"> Has salvado a ${game.score} Minions!</h1>
          <h2>Han muerto demasiados minions :'(</h2> <br />
          <button id="tryAgain-button">Jugar otra vez</button><br />
-         <img src="./images/gameOver2.png"><br />
+         <div align="center"><img src="./images/gameOver2.png" style="width: 100%;"></div>
+        <br />
  </div>`)
 
     mainContainer.appendChild(gameOverScreen)
