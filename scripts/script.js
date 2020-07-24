@@ -25,7 +25,7 @@ function main() {
     <img src="./images/z.png" alt="" class="m-img" />
     <img src="./images/m.png" alt="" class="z-img" />
     <br />
-    <button id="start-button">StartGame</button>
+    <button id="start-button">Empieza a jugar</button>
       `)
     mainContainer.appendChild(splashScreen)
     let startButton = document.getElementById("start-button")
@@ -53,9 +53,9 @@ function main() {
 
   function createGameOverScreen() {
     gameOverScreen = buildScreen(`<div id="gameOver-screen">
-         <h1 id="score"> YOU GOT ${game.score} POINTS!</h1>
-         <h2>C´mon you can do better than that!!</h2> <br />
-         <button id="tryAgain-button">Try Again</button><br />
+         <h1 id="score"> Has salvado a ${game.score} Minions!</h1>
+         <h2>Han muerto demasiados minions :'(</h2> <br />
+         <button id="tryAgain-button">Jugar otra vez</button><br />
          <img src="./images/gameOver2.png"><br />
  </div>`)
 
