@@ -1,14 +1,18 @@
 # Save Minions | Video Game Project
+
 LAB - videoGame
 
 # Project's name
+
 Save Minioms - Platform game.
 
 ## Description
+
 The game is based on the arcade game of the 80`s called GAME AND WATCH from NINTENDO, and particularly from MANHOLE NH103.
 The characters are passing through the platforms and the player move some bridges to prevent them falling and cross to the other side.
 
 ## MVP (DOM - CANVAS)
+
 - The player move the bridges, only one at each time.
 - The characters “minioms” appear randomly, with different speed to the platforms.
 - The characters “minioms” appear from outside of the screen from left and must reach the right part.
@@ -17,6 +21,7 @@ The characters are passing through the platforms and the player move some bridge
 - If the characters continue and reach the other side of the platform. the game is complete.
 
 ## Backlog
+
 - Score - If the character are able to cross the platform, the player has 1 score up.
 - Level of difficulty - characters appear faster with higher score.
 - Player changes bridges with keypad (Q,A,M,K)
@@ -24,9 +29,13 @@ The characters are passing through the platforms and the player move some bridge
 - Levels - with less time and more speed of the obstacles.
 
 ## Data structure
+
 ### index.html
+
 ### style.css
+
 ### game.js
+
 ```
 game () {
         constructor() {
@@ -56,6 +65,7 @@ this.platform;
 ```
 
 ### script.js
+
 ```
 buildScreen()
 main()
@@ -64,12 +74,13 @@ removeSplashScreen()
 createGameScreen()
 removeGameScreen()
 createGameOverScreen()
-removeGameOverScreen() 
+removeGameOverScreen()
 startGame()
 
 ```
 
 ### characters.js
+
 ```
     class Characters {
         constructor() {
@@ -86,6 +97,7 @@ startGame()
 ```
 
 ### player.js
+
 ```
     class Player extends Characters () {
         constructor ()
@@ -95,6 +107,7 @@ startGame()
 ```
 
 ### obstacle.js
+
 ```
     class Obstacle extends Characters () {
         constructor()
@@ -112,6 +125,7 @@ startGame()
 ```
 
 ### obstacleBonus.js
+
 ```
 class Obstacle3 extends Characters () {
         constructor()
@@ -128,24 +142,24 @@ class Obstacle3 extends Characters () {
     collision()
 ```
 
-
 ## States & States Transitions
 
 - splashScreen
+
   - drawSplashScreen ()
   - addEventListener(startGame)
-  
-  
+
 - startGame
+
   - drawGameScreen()
   - game.init()
-  
+
 - gameOver()
   - drawGameOverScreen()
-  - addEventListener(tryAgain) 
-
+  - addEventListener(tryAgain)
 
 ## Task
+
 - main - buildDom
 - main - buildCanvas
 - main - addEventListener
@@ -168,24 +182,20 @@ class Obstacle3 extends Characters () {
 - minion2 - Fall
 - minion2 - continue collision
 
-
 ## Links
 
-DEMO > https://alejanglez.github.io/Save-Minions-Video-Game-Project/
+DEMO > https://rgcienfuegos.github.io/Save-Minions-Video-Game-Project/
 
 ### Trello
 
 https://trello.com/b/cTKIEKYl/save-minions-video-game-projec
 
-
-
 ### Git
+
 URls for the project repo and deploy
 
-https://github.com/alejanglez/Save-Minions-Video-Game-Project
-
+https://github.com/rgcienfuegos/Save-Minions-Video-Game-Project
 
 ### Slides - Wire frames
 
 https://docs.google.com/presentation/d/1Nghxij8S6AlmM9_iw1OCH4nyRq5YyuOHDYjBbivODF0/edit#slide=id.p
-
