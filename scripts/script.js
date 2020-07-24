@@ -17,7 +17,7 @@ function main() {
       <div class="game-intro">
     <img src="./images/miniom.png" alt="" class="moniom-img" />
     <br />
-    <h1>Use the keyboard buttons to move the platforms!!</h1>
+    <h1>Usa las teclas para mover la plataforma!!</h1>
     <br />
     <img src="./images/A.png" alt="" class="m-img" />
     <img src="./images/k.png" alt="" class="z-img" />
@@ -53,7 +53,7 @@ function main() {
 
   function createGameOverScreen() {
     gameOverScreen = buildScreen(`<div id="gameOver-screen">
-         <h1 id="score"> Has salvado a ${game.score} Minions!</h1>
+         <h1 id="score"> Tienes ${game.score} Puntos! </h1>
          <h2>Han muerto demasiados minions :'(</h2> <br />
          <button id="tryAgain-button">Jugar otra vez</button><br />
          <div align="center">
