@@ -186,16 +186,8 @@ class Obstacle3 extends Characters () {
 
 DEMO > https://rgcienfuegos.github.io/Save-Minions-Video-Game-Project/
 
-### Trello
-
-https://trello.com/b/cTKIEKYl/save-minions-video-game-projec
-
 ### Git
 
 URls for the project repo and deploy
 
 https://github.com/rgcienfuegos/Save-Minions-Video-Game-Project
-
-### Slides - Wire frames
-
-https://docs.google.com/presentation/d/1Nghxij8S6AlmM9_iw1OCH4nyRq5YyuOHDYjBbivODF0/edit#slide=id.p
