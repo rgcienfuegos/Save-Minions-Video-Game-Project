@@ -1,11 +1,5 @@
 # Save Minions | Video Game Project
 
-LAB - videoGame
-
-# Project's name
-
-Save Minioms - Platform game.
-
 ## Description
 
 The game is based on the arcade game of the 80`s called GAME AND WATCH from NINTENDO, and particularly from MANHOLE NH103.
@@ -36,7 +30,7 @@ The characters are passing through the platforms and the player move some bridge
 
 ### game.js
 
-```
+```Javascript
 game () {
         constructor() {
             this.canvas;
@@ -66,7 +60,7 @@ this.platform;
 
 ### script.js
 
-```
+```Javascript
 buildScreen()
 main()
 createSplashScreen()
@@ -81,7 +75,7 @@ startGame()
 
 ### characters.js
 
-```
+```Javascript
     class Characters {
         constructor() {
             this.game;
@@ -98,7 +92,7 @@ startGame()
 
 ### player.js
 
-```
+```Javascript
     class Player extends Characters () {
         constructor ()
     }
@@ -108,7 +102,7 @@ startGame()
 
 ### obstacle.js
 
-```
+```Javascript
     class Obstacle extends Characters () {
         constructor()
     }
@@ -126,7 +120,7 @@ startGame()
 
 ### obstacleBonus.js
 
-```
+```Javascript
 class Obstacle3 extends Characters () {
         constructor()
     }
@@ -184,10 +178,10 @@ class Obstacle3 extends Characters () {
 
 ## Links
 
-DEMO > https://rgcienfuegos.github.io/Save-Minions-Video-Game-Project/
+DEMO > <https://rgcienfuegos.github.io/Save-Minions-Video-Game-Project/>
 
 ### Git
 
 URls for the project repo and deploy
 
-https://github.com/rgcienfuegos/Save-Minions-Video-Game-Project
+<https://github.com/rgcienfuegos/Save-Minions-Video-Game-Project>
